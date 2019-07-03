@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="25dp"
+    android:id="@+id/tv1"
+    android:gravity="center"
+    android:textColor="#00ff00"
+    android:background="@color/cardview_shadow_end_color"
+    android:text="Title"
+     />
+<TextView android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:textSize="25dp"
+    android:id="@+id/tv2"
+android:textColor="#0000ff"
+    android:gravity="center"
+android:autoLink="all"
+    android:layout_below="@+id/tv1"
+    android:background="@color/cardview_light_background"
+android:text="Link">
+</TextView>
+</RelativeLayout>

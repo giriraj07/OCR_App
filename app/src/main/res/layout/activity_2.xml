@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="15dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Related links:"
+        android:textColor="#0000ff"
+        android:textSize="30dp"
+        android:background="#ffff00"
+        />
+    <ProgressBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/pb"
+        android:layout_below="@+id/tv"
+        android:layout_centerInParent="true"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        />
+    <ListView
+        android:visibility="invisible"
+        android:layout_below="@+id/tv"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/listView"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="15.0sp"
+        />
+</RelativeLayout>
