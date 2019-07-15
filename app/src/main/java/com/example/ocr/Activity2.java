@@ -139,7 +139,7 @@ public class Activity2 extends AppCompatActivity {   // second activity on click
         requestQueue.start();
     }
 
-    private void showProgressForSomeTime() {
+    private void showProgressForSomeTime() {  // module for waiting of showprogress
 
         new Thread(new Runnable() {
             @Override
