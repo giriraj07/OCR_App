@@ -1148,8 +1148,7 @@ public class CameraSource {
                     if (!mActive) {
                         // Exit the loop once this camera source is stopped or released.  We check
                         // this here, immediately after the wait() above, to handle the case where
-                        // setActive(false) had been called, triggering the termination of this
-                        // loop.
+                        // setActive(false) had been called, triggering the termination of this loop.
                         return;
                     }
 

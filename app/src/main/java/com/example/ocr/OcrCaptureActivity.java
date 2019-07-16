@@ -149,10 +149,7 @@ public final class OcrCaptureActivity extends AppCompatActivity {
                         .setFocusMode(autoFocus ? Camera.Parameters.FOCUS_MODE_CONTINUOUS_PICTURE : null)
                         .build();
     }
-
-    /**
-     * Restarts the camera.
-     */
+// Restarts the camera
     @Override
     protected void onResume() {
         super.onResume();

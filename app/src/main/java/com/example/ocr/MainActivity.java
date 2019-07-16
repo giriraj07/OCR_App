@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
     @Override
     public void onClick(View v) {
-        if (v.getId() == R.id.read_text) {  //  launch Ocr capture activity
+        if (v.getId() == R.id.read_text) {  //  For displaying textblock on live screen of mobile
                OcrGraphic.Fetched=new StringBuilder();
                textValue.setText("");
             Intent intent = new Intent(this, OcrCaptureActivity.class);
@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             intent.putExtra(OcrCaptureActivity.UseFlash, useFlash.isChecked());
             startActivityForResult(intent, RC_OCR_CAPTURE);
         }
-        else if(v.getId()==R.id.gallery)
+        else if(v.getId()==R.id.gallery)   // Select image from gallery
         {
             openGallery();
         }

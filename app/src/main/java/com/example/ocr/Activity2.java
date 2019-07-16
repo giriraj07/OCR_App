@@ -52,8 +52,8 @@ public class Activity2 extends AppCompatActivity {   // second activity on click
         String server_url = "https://www.googleapis.com/customsearch/v1?q=" + whole +
                 "&cx=012842549497044129491%3Aewhicys_ogc&key=AIzaSyDtFbpeg5Qyrd1B7eq6og49xASR-yY6eC0";
         // this url is used for making any site's searhes to json format
-        Log.d("TAG", stringBuilder.toString());
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {   // on clicking item
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int index, long l) {
                 Object clickItemObj = adapterView.getAdapter().getItem(index);
@@ -69,15 +69,14 @@ public class Activity2 extends AppCompatActivity {   // second activity on click
         setupTheNetWorking(List,server_url, simpleAdapter);
     }
 
-    public void setupTheNetWorking(final ArrayList<Map<String, String>> List, String server_url, final SimpleAdapter simpleAdapter){
-        final RequestQueue requestQueue = Volley.newRequestQueue(Activity2.this);
+    public void setupTheNetWorking(final ArrayList<Map<String, String>> List, String server_url,
+                                   final SimpleAdapter simpleAdapter){
+        final RequestQueue requestQueue = Volley.newRequestQueue(Activity2.this); // Using Volley library for networking
         JsonObjectRequest request = new JsonObjectRequest(Request.
                 Method.GET, server_url, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
-                Log.d("TAG", response.toString());
                 JSONArray ja = null;
-
                 try {
                     ja = response.getJSONArray("items");
                 } catch (JSONException e) {
@@ -89,15 +88,18 @@ public class Activity2 extends AppCompatActivity {   // second activity on click
                         JSONObject jo=response.getJSONObject("spelling");
                         HashMap<String,String> hm=new HashMap<>();
                         hm.put("title",jo.getString("correctedQuery"));
+
                         String url= "https://?q="+ URLEncoder.encode(whole, "UTF-8");
                         hm.put("link",url);
                         List.add(hm);
                         simpleAdapter.notifyDataSetChanged();
                         requestQueue.stop();
-                    } catch (JSONException e) {
+                    }
+                    catch (JSONException e) {
                         Toast.makeText(Activity2.this,"Oops! Something Went Wrong!",Toast.LENGTH_SHORT).show();
                         e.printStackTrace();
-                    } catch (UnsupportedEncodingException e) {
+                    }
+                    catch (UnsupportedEncodingException e) {
                         e.printStackTrace();
                     }
                 }
@@ -127,7 +129,7 @@ public class Activity2 extends AppCompatActivity {   // second activity on click
             }
         }, new Response.ErrorListener() {
             @Override
-            public void onErrorResponse(VolleyError error) {
+            public void onErrorResponse(VolleyError error) {  // when network error occurs
                 if (error instanceof NetworkError) {
                     Toast.makeText(getApplicationContext(), "No network available", Toast.LENGTH_LONG).show();
                 } else {

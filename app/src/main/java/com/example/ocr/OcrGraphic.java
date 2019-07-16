@@ -66,7 +66,7 @@ public class OcrGraphic extends GraphicOverlay.Graphic {
         if (text == null) {
             return;
         }
-        // Draws the bounding box around the TextBlock.
+        // Draws the bounding box (Rectangular) around the TextBlock.
         RectF rect = new RectF(text.getBoundingBox());
         rect.left = translateX(rect.left);
         rect.top = translateY(rect.top);

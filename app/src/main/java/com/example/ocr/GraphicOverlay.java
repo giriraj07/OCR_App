@@ -94,7 +94,6 @@ public class GraphicOverlay<T extends GraphicOverlay.Graphic> extends View {
         }
         postInvalidate();
     }
-
     /**
      * Returns the first graphic, if any, that exists at the provided absolute screen coordinates.
      * These coordinates will be offset by the relative screen position of this view.
@@ -113,7 +112,6 @@ public class GraphicOverlay<T extends GraphicOverlay.Graphic> extends View {
             return null;
         }
     }
-
     /**
      * Sets the camera attributes for size and facing direction, which informs how to transform
      * image coordinates later.
@@ -126,10 +124,7 @@ public class GraphicOverlay<T extends GraphicOverlay.Graphic> extends View {
         }
         postInvalidate();
     }
-
-    /**
-     * Draws the overlay with its associated graphic objects.
-     */
+      //Draws the overlay with its associated graphic objects.
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
