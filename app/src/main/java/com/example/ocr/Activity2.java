@@ -42,7 +42,7 @@ public class Activity2 extends AppCompatActivity {   // second activity on click
         setContentView(R.layout.activity_2);
         ListView listView = findViewById(R.id.listView);
         mProgressBar = findViewById(R.id.pb);
-        showProgressForSomeTime();      // Setting up the progress bar
+        showProgressForSomeTime();                    // Setting up the progress bar
 
         final ArrayList<Pair<String, String>> list = new ArrayList<>();
         if (whole.length() == 0) {

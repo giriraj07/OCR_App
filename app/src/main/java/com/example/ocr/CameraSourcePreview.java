@@ -179,7 +179,6 @@ public class CameraSourcePreview extends ViewGroup {
         if (orientation == Configuration.ORIENTATION_PORTRAIT) {
             return true;
         }
-
         Log.d(TAG, "isPortraitMode returning false by default");
         return false;
     }

@@ -1035,16 +1035,6 @@ public class CameraSource {
         }
     }
 
-    /**
-     * This runnable controls access to the underlying receiver, calling it to process frames when
-     * available from the camera.  This is designed to run detection on frames as fast as possible
-     * (i.e., without unnecessary context switching or waiting on the next frame).
-     * <p/>
-     * While detection is running on a frame, new frames may be received from the camera.  As these
-     * frames come in, the most recent frame is held onto as pending.  As soon as detection and its
-     * associated processing are done for the previous frame, detection on the mostly recently
-     * received frame will immediately start on the same thread.
-     */
     private class FrameProcessingRunnable implements Runnable {
         private Detector<?> mDetector;
         private long mStartTimeMillis = SystemClock.elapsedRealtime();
@@ -1112,21 +1102,6 @@ public class CameraSource {
                 mLock.notifyAll();
             }
         }
-
-        /**
-         * As long as the processing thread is active, this executes detection on frames
-         * continuously.  The next pending frame is either immediately available or hasn't been
-         * received yet.  Once it is available, we transfer the frame info to local variables and
-         * run detection on that frame.  It immediately loops back for the next frame without
-         * pausing.
-         * <p/>
-         * If detection takes longer than the time in between new frames from the camera, this will
-         * mean that this loop will run without ever waiting on a frame, avoiding any context
-         * switching or frame acquisition time latency.
-         * <p/>
-         * If you find that this is using more CPU than you'd like, you should probably decrease the
-         * FPS setting above to allow for some idle time in between frames.
-         */
         @Override
         public void run() {
             Frame outputFrame;
