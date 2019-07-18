@@ -36,14 +36,6 @@ public class OcrGraphic extends GraphicOverlay.Graphic {
         postInvalidate();
     }
 
-    public int getId() {
-        return mId;
-    }
-
-    public void setId(int id) {
-        this.mId = id;
-    }
-
     public TextBlock getTextBlock() {
         return mText;
     }

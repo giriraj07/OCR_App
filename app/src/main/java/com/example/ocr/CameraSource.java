@@ -942,14 +942,6 @@ public class CameraSource {
         }
         return selectedFpsRange;
     }
-
-    /**
-     * Calculates the correct rotation for the given camera id and sets the rotation in the
-     * parameters.  It also sets the camera's display orientation and rotation.
-     *
-     * @param parameters the camera parameters for which to set the rotation
-     * @param cameraId   the camera id to set rotation based on
-     */
     private void setRotation(Camera camera, Camera.Parameters parameters, int cameraId) {
         WindowManager windowManager =
                 (WindowManager) mContext.getSystemService(Context.WINDOW_SERVICE);

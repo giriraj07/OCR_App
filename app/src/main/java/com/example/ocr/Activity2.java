@@ -51,7 +51,7 @@ public class Activity2 extends AppCompatActivity {   // second activity on click
         }
         String server_url = "https://www.googleapis.com/customsearch/v1?q=" + whole +
                 "&cx=012842549497044129491%3Aewhicys_ogc&key=AIzaSyDtFbpeg5Qyrd1B7eq6og49xASR-yY6eC0";
-        // this url is used for making any site's searhes to json format
+        // this url is used for making any url content to json format
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {   // on clicking item
             @Override
